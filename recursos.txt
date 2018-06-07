@@ -1,0 +1,123 @@
+=========================================================ADMIN===============================================================
+
+POST localhost://api/v1/personas		//Agregar una persona
+{
+	"rut" : "11-1",
+	"Nombre" : "pitah",
+	"apellido" : "Espinoza",
+	"direccion" : "Graneros",
+	"edad" : "20",
+	"tipoUsuario_fk" : "1"
+}
+
+{
+	"codigo":"1",
+	"informacion":" Se ha agregado una persona "
+
+}
+
+{
+
+	"codigo":"2",
+	"informacion":" Ya se encuentra la persona "
+}
+
+GET localhost://api/v1/personas/1            	//obtener persona con id 1
+{
+	"rut" : "11-1",
+	"Nombre" : "pitah",
+	"apellido" : "Espinoza",
+	"direccion" : "Graneros",
+	"edad" : "20",
+	"tipoUsuario_fk" : "1",
+	
+}
+post localhost://api/v1/partidos		// agregar un partido
+
+{
+	"id":"1",
+	"descripcion":"derecha"
+
+}
+
+{
+	"codigo":"3",
+	"informacion":" Se ha agregado un partido"
+
+}
+{
+
+	"codigo":"4",
+	"informacion":" Ya se encuentra el partido"
+}
+
+POST localhost://api/v1/candidatos		//agregar un candidato
+
+
+	"id" : "1",
+	"rut":"55-5",
+	"nombre":"piñera",
+	"partido_fk" : "1"
+	
+	
+}
+
+{
+	"codigo":"6",
+	"informacion":" Se ha agregado un candidato "
+
+}
+{
+
+	"codigo":"7",
+	"informacion":" Ya se encuentra el candidato "
+}
+
+
+POST localhost://api/v1/votos			//agregar un voto
+
+{
+	"id" : "1"
+	"fecha_voto" : "2018-06-06 "
+	"votante_fk" : "22-2",
+	"candidato_fk" : "55-5"
+}
+
+{
+	"codigo":"8",
+	"informacion":" se ha votado correctamente "
+
+}
+
+{
+
+	"codigo":"9",
+	"informacion":" no puede votar dos veces "
+}
+
+
+GET localhost://api/v1/lista_candidatos		//obtiene lista de candidatos
+{
+	"listaCandidatos" : [{
+		"partido_fk" : "1",
+		"persona_fk" : "22-2",
+		"codigo" : "201",
+	},{
+		"partido_fk" : "2",
+		"persona_fk" : "55-2"
+		
+	}
+
+	]	
+
+}
+
+GET localhost://api/v1/lista_candidatos/22-2	//obtiene un candidato segun rut candidato
+{
+	"listaCandidatos" :{
+		"partido_fk" : "1",
+		"persona_fk" : "22-2"
+		
+	}	
+
+}
