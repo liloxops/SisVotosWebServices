@@ -6,5 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 Class Partido extends Model {
 
-    protected  $fillable = ['id','descripcion'];
+    protected $table = 'partido';
+    protected $primaryKey = 'id';
+    protected $fillable = ['id', 'Description'];
+
 }
